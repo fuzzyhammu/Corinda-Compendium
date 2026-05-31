@@ -157,15 +157,15 @@ export default function Emergency() {
               [SYSTEM] — EMERGENCY ACCESS TERMINAL v2.0
             </div>
             <div className="space-y-1">
-              {lines.map((line, i) => (
+              {lines.filter(Boolean).map((line, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.2 }}
-                  className={`text-sm ${line.includes("GRANTED") ? "text-green-300 font-bold" : "text-green-500"}`}
+                  className={`text-sm ${line?.includes("GRANTED") ? "text-green-300 font-bold" : "text-green-500"}`}
                   style={
-                    line.includes("GRANTED")
+                    line?.includes("GRANTED")
                       ? { textShadow: "0 0 10px #00ff41" }
                       : {}
                   }
