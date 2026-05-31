@@ -322,3 +322,29 @@
     inset: -1px;
   }
 }
+
+/* ── Floating emoji rain ───────────────────────────────────── */
+@keyframes emojiFloat {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    opacity: var(--start-op, 0.15);
+  }
+  15% {
+    opacity: var(--start-op, 0.15);
+  }
+  85% {
+    opacity: var(--start-op, 0.15);
+  }
+  100% {
+    transform: translateY(-105vh) translateX(var(--drift, 0px)) rotate(45deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.emoji-float {
+  animation-name: emojiFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+  line-height: 1;
+}
