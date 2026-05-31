@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Books from "@/pages/books";
+import CorindaSteps from "@/pages/corinda-steps";
 import Emergency from "@/pages/emergency";
 import Vision from "@/pages/vision";
 
@@ -17,6 +18,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/books" component={Books} />
+        <Route path="/corinda-13-steps" component={CorindaSteps} />
         <Route path="/emergency" component={Emergency} />
         <Route path="/vision" component={Vision} />
         <Route component={NotFound} />

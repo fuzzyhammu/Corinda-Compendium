@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
-import { chapters, books } from "@/lib/data";
-import { RiExternalLinkLine, RiAlertLine, RiEyeLine, RiEyeOffLine, RiBookOpenLine, RiArrowRightLine } from "react-icons/ri";
+import { motion, type Variants } from "framer-motion";
+import { books } from "@/lib/data";
+import { RiBookOpenLine, RiArrowRightLine, RiRouteLine } from "react-icons/ri";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: (i: number) => ({
     opacity: 1,
@@ -61,70 +60,6 @@ function BookCard({ book, index }: { book: typeof books[0]; index: number }) {
   );
 }
 
-function ChapterCard({ chapter }: { chapter: typeof chapters[0] }) {
-  const [showEmbed, setShowEmbed] = useState(false);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.01 }}
-      className={`group relative rounded-2xl p-[1px] overflow-hidden bg-gradient-to-br ${chapter.color}`}
-    >
-      <div className={`absolute inset-0 bg-gradient-to-br ${chapter.color} opacity-0 group-hover:opacity-25 blur-2xl transition-opacity duration-700 pointer-events-none`} />
-      <div className="relative bg-[#08080D] rounded-[15px] flex flex-col overflow-hidden border border-white/5 group-hover:border-white/10 transition-colors duration-300">
-        <div className="absolute inset-2 rounded-xl border border-white/0 group-hover:border-white/[0.07] transition-all duration-500 pointer-events-none" />
-
-        <div className="relative p-5 pb-3">
-          <div className="flex justify-between items-start mb-3">
-            <span className={`text-4xl font-serif italic text-transparent bg-clip-text bg-gradient-to-br ${chapter.color} opacity-50`}>
-              {chapter.id.toString().padStart(2, "0")}
-            </span>
-          </div>
-          <h3 className="text-sm font-semibold text-white tracking-wide mb-2">{chapter.title}</h3>
-          <p className="text-xs text-white/45 leading-relaxed">{chapter.description}</p>
-        </div>
-
-        <div className="px-5 pb-4 flex flex-wrap gap-2">
-          <a href={`https://${chapter.id}corinda.netlify.app`} target="_blank" rel="noopener noreferrer"
-            className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium uppercase tracking-wider bg-gradient-to-br ${chapter.color} text-white opacity-85 hover:opacity-100 transition-opacity`}
-            onClick={e => e.stopPropagation()}>
-            <RiExternalLinkLine className="shrink-0" /> View Site
-          </a>
-          <a href={`https://${chapter.id}-corinda.netlify.app`} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium uppercase tracking-wider bg-white/5 border border-white/10 text-white/55 hover:text-white hover:bg-white/10 transition-all"
-            onClick={e => e.stopPropagation()}>
-            <RiAlertLine className="shrink-0 text-green-400" /> Emergency
-          </a>
-          <button onClick={() => setShowEmbed(v => !v)}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium uppercase tracking-wider bg-white/5 border border-white/10 text-white/40 hover:text-white/70 transition-all ml-auto">
-            {showEmbed ? <RiEyeOffLine /> : <RiEyeLine />}
-            {showEmbed ? "Hide" : "Preview"}
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {showEmbed && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 280, opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="overflow-hidden border-t border-white/8"
-            >
-              <iframe src={`https://${chapter.id}corinda.netlify.app`}
-                title={`Chapter ${chapter.id} — ${chapter.title}`}
-                className="w-full h-70" style={{ height: 280 }}
-                loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Home() {
   return (
     <div className="flex-1 w-full">
@@ -140,7 +75,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
-            <span className="text-white/15 text-xs tracking-widest uppercase">9 volumes</span>
+            <span className="text-white/15 text-xs tracking-widest uppercase">{books.length} volumes</span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
           </div>
         </motion.div>
@@ -160,40 +95,28 @@ export default function Home() {
           ))}
         </div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-10">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link href="/books">
             <motion.span
               whileHover={{ scale: 1.03 }}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/[0.03] text-white/50 hover:text-white hover:border-white/25 hover:bg-white/[0.07] transition-all duration-300 text-sm uppercase tracking-widest cursor-pointer"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-8 py-3 text-sm uppercase tracking-widest text-white/50 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
             >
               <RiBookOpenLine />
               Open Full Library with PDF Embeds
               <RiArrowRightLine />
             </motion.span>
           </Link>
+          <Link href="/corinda-13-steps">
+            <motion.span
+              whileHover={{ scale: 1.03 }}
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-purple-400/20 bg-purple-500/10 px-8 py-3 text-sm uppercase tracking-widest text-purple-200/70 transition-all duration-300 hover:border-purple-300/35 hover:bg-purple-500/20 hover:text-white"
+            >
+              <RiRouteLine />
+              Open Corinda 13 Steps Page
+              <RiArrowRightLine />
+            </motion.span>
+          </Link>
         </motion.div>
-      </section>
-
-      {/* ── CORINDA SECTION ─────────────────────────────────── */}
-      <section className="border-t border-white/5 bg-[#040409] py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.5em] text-purple-400/50 mb-4">Corinda</p>
-            <h2 className="text-3xl md:text-5xl font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-400 mb-4">
-              Thirteen Steps to Mentalism
-            </h2>
-            <p className="text-white/30 text-sm max-w-xl mx-auto leading-relaxed">
-              Each chapter has its own dedicated site. Click to visit, preview inline, or access emergency mirrors.
-            </p>
-            <div className="w-20 h-px mx-auto mt-6 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {chapters.map(chapter => (
-              <ChapterCard key={chapter.id} chapter={chapter} />
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { RiBook2Line, RiHomeLine, RiAlertFill } from "react-icons/ri";
+import { RiBook2Line, RiHomeLine, RiAlertFill, RiRouteLine } from "react-icons/ri";
 import { FloatingEmojis } from "@/components/floating-emojis";
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -11,7 +11,7 @@ export function Layout({ children }: { children: ReactNode }) {
   }
 
   // Different seed gives different random placement per page
-  const emojiSeed = location === "/books" ? 99 : location === "/vision" ? 7 : 42;
+  const emojiSeed = location === "/books" ? 99 : location === "/corinda-13-steps" ? 13 : location === "/vision" ? 7 : 42;
   const emojiCount = 20;
 
   return (
@@ -35,6 +35,7 @@ export function Layout({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-1 md:gap-2">
             <NavLink href="/" icon={<RiHomeLine />} label="Overview" active={location === "/"} />
             <NavLink href="/books" icon={<RiBook2Line />} label="Library" active={location === "/books"} />
+            <NavLink href="/corinda-13-steps" icon={<RiRouteLine />} label="13 Steps" active={location === "/corinda-13-steps"} />
             <NavLink href="/emergency" icon={<RiAlertFill className="text-green-400" />} label="Emergency" active={location === "/emergency"} emergency />
             <Link href="/vision" className="opacity-0 hover:opacity-100 transition-opacity duration-500 px-2 py-1 text-xs text-white/10 select-none">·</Link>
           </div>
