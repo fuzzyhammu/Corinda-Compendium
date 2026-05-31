@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { chapters, books } from "@/lib/data";
 import { RiExternalLinkLine, RiAlertLine, RiEyeLine, RiEyeOffLine, RiBookOpenLine, RiArrowRightLine } from "react-icons/ri";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: (i: number) => ({
     opacity: 1,
