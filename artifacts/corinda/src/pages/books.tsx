@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 const driveLinks = [
   "https://drive.google.com/file/d/13VMpCcqzLiERziklNJdbKZfngmwO8pe2/view",
   "https://drive.google.com/file/d/16-M4iMzG3wpTM5YHOhN6ij_7wO0EKd8h/view",
@@ -30,97 +31,316 @@ const driveLinks = [
   "https://drive.google.com/file/d/1sa9i0U3fQOmwQG8-6G4QKnleTqm6l-s9/view",
   "https://drive.google.com/file/d/1tu0npBzuoc2Br6E6YmK_RYHh1PrtLmqL/view",
   "https://drive.google.com/file/d/1ulLj4atH5ATpbBj_EjqJuueSHX9cURuQ/view",
-  "https://drive.google.com/file/d/1yp72GlTzU46n_o_wfn-uFp5EyKxCoCu2/view",
+  "https://drive.google.com/file/d/1yp72GlTzU46n_o_wfn-uFp5EyKxCoCu2/view"
 ];
+
 const books = [
   {
     id: 1,
-    title: "Thirteen Steps to Mentalism",
-    author: "Corinda",
-    description: "The definitive bible of mentalism. Thirteen complete systems covering every branch of the art — from the swami gimmick to large-scale publicity stunts. Required reading for every serious student of the mind.",
-    pdf: "/pdfs/corinda.pdf",
+    title: "The Big Con",
+    author: "David W. Maurer",
+    description:
+      "A sociological study of confidence tricks and professional con artists in early 20th-century America, focusing on scam structures and criminal psychology.",
+    pdf: driveLinks[0],
     color: "from-purple-500 to-indigo-700",
     glow: "rgba(139,92,246,0.4)",
     note: null,
   },
   {
     id: 2,
-    title: "Practical Mental Magic",
-    author: "Theodore Annemann",
-    description: "A masterwork from the golden age of mentalism. Annemann's complete collection of mental effects — billets, book tests, predictions, and the impossible made practical. Essential Jinx Magazine content, curated and edited.",
-    pdf: "/pdfs/annemann.pdf",
-    color: "from-cyan-400 to-blue-600",
-    glow: "rgba(34,211,238,0.4)",
+    title: "The Definitive Book of Body Language",
+    author: "Allan Pease & Barbara Pease",
+    description:
+      "A comprehensive guide to interpreting nonverbal communication such as gestures, posture, facial expressions, and social signaling.",
+    pdf: driveLinks[1],
+    color: "from-fuchsia-500 to-pink-600",
+    glow: "rgba(232,121,249,0.4)",
     note: null,
   },
   {
     id: 3,
-    title: "The Full Facts Book of Cold Reading",
-    author: "Ian Rowland",
-    description: "The complete technical manual for cold reading — the art of making accurate statements about a stranger using psychology, probability, and structured technique. Covers every element from rainbow ruses to Barnum statements.",
-    pdf: "/pdfs/rowland.pdf",
-    color: "from-emerald-400 to-teal-600",
-    glow: "rgba(52,211,153,0.4)",
-    note: null,
-  },
-  {
-    id: 4,
-    title: "Telling Lies",
-    author: "Paul Ekman",
-    description: "The world-renowned psychologist's definitive investigation into the science of deceit. Covers micro-expressions, leakage, vocal clues, and real-world lie detection — from patient interviews to presidential hearings.",
-    pdf: "/pdfs/ekman.pdf",
+    title: "The Confidence Game",
+    author: "Maria Konnikova",
+    description:
+      "An analysis of why intelligent people fall for scams, focusing on psychological vulnerability and manipulation tactics used by con artists.",
+    pdf: driveLinks[2],
     color: "from-rose-400 to-red-600",
     glow: "rgba(251,113,133,0.4)",
     note: null,
   },
   {
-    id: 5,
-    title: "Spy the Lie",
-    author: "Houston, Floyd, Carnicero & Tennant",
-    description: "Former CIA officers reveal a field-tested methodology for detecting deception used in real-world intelligence interrogations. Systematic, practical, and grounded in decades of high-stakes experience.",
-    pdf: "/pdfs/spy.pdf",
-    color: "from-amber-400 to-orange-600",
-    glow: "rgba(251,191,36,0.4)",
+    id: 4,
+    title: "Mastermind: How to Think Like Sherlock Holmes",
+    author: "Maria Konnikova",
+    description:
+      "Explores cognitive strategies used by Sherlock Holmes, emphasizing attention, logic, and controlled thinking to improve real-world reasoning.",
+    pdf: driveLinks[3],
+    color: "from-cyan-400 to-blue-600",
+    glow: "rgba(34,211,238,0.4)",
     note: null,
   },
   {
-    id: 6,
+    id: 5,
     title: "The Like Switch",
-    author: "Jack Schafer, Ph.D.",
-    description: "An ex-FBI behavioral analyst reveals the exact techniques used to make strangers trust and like you — from non-verbal rapport signals to conversational frameworks for building instant connection.",
-    pdf: "/pdfs/schafer.pdf",
+    author: "Jack Schafer & Marvin Karlins",
+    description:
+      "Based on FBI behavioral analysis, it explains techniques for building rapport, trust, and social influence through behavioral cues.",
+    pdf: driveLinks[4],
     color: "from-sky-400 to-blue-600",
     glow: "rgba(56,189,248,0.4)",
     note: null,
   },
   {
+    id: 6,
+    title: "Practical Mental Magic",
+    author: "Theodore Annemann",
+    description:
+      "A foundational mentalism text covering performance techniques, psychological illusions, and classic mental magic methods.",
+    pdf: driveLinks[5],
+    color: "from-cyan-400 to-indigo-600",
+    glow: "rgba(34,211,238,0.4)",
+    note: null,
+  },
+  {
     id: 7,
-    title: "Influence: The Psychology of Persuasion",
-    author: "Robert B. Cialdini, Ph.D.",
-    description: "Six universal principles of compliance and persuasion that drive human behavior. The scientific bedrock beneath every successful mentalism presentation — reciprocation, commitment, social proof, liking, authority, and scarcity.",
-    pdf: "/pdfs/cialdini.pdf",
+    title: "How to Win Friends and Influence People",
+    author: "Dale Carnegie",
+    description:
+      "A classic self-improvement book on interpersonal skills, persuasion, communication, and social effectiveness.",
+    pdf: driveLinks[6],
     color: "from-yellow-400 to-amber-600",
     glow: "rgba(250,204,21,0.4)",
     note: null,
   },
   {
     id: 8,
-    title: "What Every Body Is Saying",
-    author: "Joe Navarro",
-    description: "An ex-FBI agent's complete guide to reading nonverbal communication. Master the silent language of the body — the foundation of any convincing cold reading, psychometry presentation, or mind-reading act.",
-    pdf: "/pdfs/navarro.pdf",
+    title: "Moonwalking with Einstein",
+    author: "Joshua Foer",
+    description:
+      "A narrative exploration of memory techniques and competitive memorization, showing how memory can be trained through structured systems.",
+    pdf: driveLinks[7],
     color: "from-green-400 to-emerald-600",
     glow: "rgba(74,222,128,0.4)",
     note: null,
   },
   {
     id: 9,
-    title: "The Definitive Book of Body Language",
-    author: "Allan & Barbara Pease",
-    description: "The world's foremost expert on body language decodes every gesture, expression, and posture. A critical companion for any mentalist who wants their readings to feel eerily accurate.",
-    pdf: "/pdfs/pease.pdf",
-    color: "from-fuchsia-500 to-pink-600",
-    glow: "rgba(232,121,249,0.4)",
+    title: "Trance-Formations",
+    author: "Richard Bandler & John Grinder",
+    description:
+      "A foundational NLP text exploring language patterns, hypnosis, and behavioral modeling.",
+    pdf: driveLinks[8],
+    color: "from-indigo-400 to-purple-600",
+    glow: "rgba(99,102,241,0.4)",
+    note: null,
+  },
+  {
+    id: 10,
+    title: "The Laws of Human Nature",
+    author: "Robert Greene",
+    description:
+      "A psychological framework for understanding human behavior, motivations, ego patterns, and strategic social navigation.",
+    pdf: driveLinks[9],
+    color: "from-stone-400 to-zinc-600",
+    glow: "rgba(161,161,170,0.4)",
+    note: null,
+  },
+  {
+    id: 11,
+    title: "Telling Lies",
+    author: "Paul Ekman",
+    description:
+      "A scientific analysis of micro-expressions and deception detection based on facial muscle movements and emotional leakage.",
+    pdf: driveLinks[10],
+    color: "from-rose-400 to-red-600",
+    glow: "rgba(251,113,133,0.4)",
+    note: null,
+  },
+  {
+    id: 12,
+    title: "You Can Have an Amazing Memory",
+    author: "Dominic O’Brien",
+    description:
+      "A practical guide to memory systems developed by a world memory champion, focusing on visualization and association techniques.",
+    pdf: driveLinks[11],
+    color: "from-emerald-400 to-teal-600",
+    glow: "rgba(52,211,153,0.4)",
+    note: null,
+  },
+  {
+    id: 13,
+    title: "Never Split the Difference",
+    author: "Chris Voss",
+    description:
+      "Negotiation strategies from a former FBI hostage negotiator, emphasizing tactical empathy and calibrated communication.",
+    pdf: driveLinks[12],
+    color: "from-orange-400 to-red-600",
+    glow: "rgba(251,146,60,0.4)",
+    note: null,
+  },
+  {
+    id: 14,
+    title: "Thirteen Steps to Mentalism",
+    author: "Tony Corinda",
+    description:
+      "A structured manual of mentalism techniques including mind-reading illusions, predictions, and psychological performance methods.",
+    pdf: driveLinks[13],
+    color: "from-purple-500 to-indigo-700",
+    glow: "rgba(139,92,246,0.4)",
+    note: null,
+  },
+  {
+    id: 15,
+    title: "Pre-Suasion",
+    author: "Robert Cialdini",
+    description:
+      "Examines how attention and context shape persuasion before a message is delivered.",
+    pdf: driveLinks[14],
+    color: "from-yellow-400 to-amber-600",
+    glow: "rgba(250,204,21,0.4)",
+    note: null,
+  },
+  {
+    id: 16,
+    title: "The 48 Laws of Power",
+    author: "Robert Greene",
+    description:
+      "A strategic guide to power dynamics, manipulation, and social hierarchy patterns throughout history.",
+    pdf: driveLinks[15],
+    color: "from-stone-500 to-black",
+    glow: "rgba(0,0,0,0.4)",
+    note: null,
+  },
+  {
+    id: 17,
+    title: "Psychology of Intelligence Analysis",
+    author: "Richards J. Heuer Jr.",
+    description:
+      "A study of cognitive biases in intelligence work and how analysts can improve judgment under uncertainty.",
+    pdf: driveLinks[16],
+    color: "from-blue-400 to-indigo-600",
+    glow: "rgba(59,130,246,0.4)",
+    note: null,
+  },
+  {
+    id: 18,
+    title: "Thinking, Fast and Slow",
+    author: "Daniel Kahneman",
+    description:
+      "Explains dual-process theory of cognition: fast intuitive thinking vs slow analytical reasoning, and associated biases.",
+    pdf: driveLinks[17],
+    color: "from-amber-400 to-yellow-600",
+    glow: "rgba(250,204,21,0.4)",
+    note: null,
+  },
+  {
+    id: 19,
+    title: "Designing Miracles",
+    author: "Darwin Ortiz",
+    description:
+      "Advanced theory of magic design focusing on deception structure, audience perception, and impossibility construction.",
+    pdf: driveLinks[18],
+    color: "from-violet-400 to-fuchsia-600",
+    glow: "rgba(192,132,252,0.4)",
+    note: null,
+  },
+  {
+    id: 20,
+    title: "The Ellipsis Manual",
+    author: "Chase Hughes",
+    description:
+      "A behavioral psychology system for reading, influencing, and analyzing human behavior patterns in real time.",
+    pdf: driveLinks[19],
+    color: "from-teal-400 to-cyan-600",
+    glow: "rgba(45,212,191,0.4)",
+    note: null,
+  },
+  {
+    id: 21,
+    title: "Games People Play",
+    author: "Eric Berne",
+    description:
+      "A foundational transactional analysis book describing recurring psychological “games” in social interactions.",
+    pdf: driveLinks[20],
+    color: "from-pink-400 to-rose-600",
+    glow: "rgba(244,114,182,0.4)",
+    note: null,
+  },
+  {
+    id: 22,
+    title: "What Every Body Is Saying",
+    author: "Joe Navarro",
+    description:
+      "Explains nonverbal communication from an ex-FBI agent, focusing on body cues that reveal intent and emotion.",
+    pdf: driveLinks[21],
+    color: "from-green-400 to-emerald-600",
+    glow: "rgba(74,222,128,0.4)",
+    note: null,
+  },
+  {
+    id: 23,
+    title: "Deception & Self-Deception",
+    author: "Richard Wiseman",
+    description:
+      "Research-based exploration of how people deceive others and themselves, including psychological blind spots.",
+    pdf: driveLinks[22],
+    color: "from-gray-400 to-slate-600",
+    glow: "rgba(148,163,184,0.4)",
+    note: null,
+  },
+  {
+    id: 24,
+    title: "Impro: Improvisation and the Theatre",
+    author: "Keith Johnstone",
+    description:
+      "A study of spontaneity, creativity, and social dynamics through improvisational theatre techniques.",
+    pdf: driveLinks[23],
+    color: "from-orange-400 to-amber-600",
+    glow: "rgba(251,146,60,0.4)",
+    note: null,
+  },
+  {
+    id: 25,
+    title: "Strong Magic",
+    author: "Darwin Ortiz",
+    description:
+      "Focuses on performance theory in magic, especially audience psychology and the construction of convincing illusions.",
+    pdf: driveLinks[24],
+    color: "from-indigo-500 to-blue-700",
+    glow: "rgba(99,102,241,0.4)",
+    note: null,
+  },
+  {
+    id: 26,
+    title: "Sleights of Mind",
+    author: "Macknik, Martinez-Conde & Blakeslee",
+    description:
+      "Neuroscientific analysis of magic tricks and how they exploit attention, perception, and cognitive blind spots.",
+    pdf: driveLinks[25],
+    color: "from-cyan-400 to-sky-600",
+    glow: "rgba(56,189,248,0.4)",
+    note: null,
+  },
+  {
+    id: 27,
+    title: "Left of Bang",
+    author: "Patrick Van Horne & Jason A. Riley",
+    description:
+      "Behavioral detection system used by Marines to identify threats before incidents occur.",
+    pdf: driveLinks[26],
+    color: "from-red-400 to-rose-600",
+    glow: "rgba(248,113,113,0.4)",
+    note: null,
+  },
+  {
+    id: 28,
+    title: "Influence: The Psychology of Persuasion",
+    author: "Robert Cialdini",
+    description:
+      "Classic study of persuasion principles such as reciprocity, scarcity, authority, consistency, liking, and social proof.",
+    pdf: driveLinks[27],
+    color: "from-yellow-400 to-amber-600",
+    glow: "rgba(250,204,21,0.4)",
     note: null,
   },
 ];
@@ -138,48 +358,38 @@ export default function Books() {
           The Library
         </h1>
         <p className="text-white/30 text-xs uppercase tracking-[0.35em]">
-          Essential Texts for the Serious Mentalist
+          Essential Texts for the Serious Thinker
         </p>
         <div className="w-24 h-px mx-auto mt-6 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent" />
       </motion.div>
 
       <div className="space-y-20">
-        {books.map((book, i) => (
+        {books.map((book) => (
           <motion.div
             key={book.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.05 }}
-            className="relative"
+            transition={{ duration: 0.7 }}
           >
-            {/* Book header card */}
-            <div
-              className="relative rounded-2xl p-[1px] mb-4 overflow-hidden"
-              style={{ background: `linear-gradient(135deg, ${book.glow.replace("0.4", "0.7")}, transparent 70%)` }}
-            >
+            <div className="relative rounded-2xl p-[1px] mb-4 overflow-hidden">
               <div className="relative bg-[#09090f] rounded-[15px] p-8 overflow-hidden">
-                {/* Ambient glow */}
                 <div
                   className="absolute -top-12 -left-12 w-48 h-48 rounded-full blur-[60px] opacity-25 pointer-events-none"
                   style={{ background: book.glow }}
                 />
-                {/* Nested box layers */}
-                <div className="absolute inset-3 rounded-xl border opacity-[0.07] pointer-events-none" style={{ borderColor: book.glow.replace("0.4", "1") }} />
-                <div className="absolute inset-6 rounded-lg border opacity-[0.04] pointer-events-none" style={{ borderColor: book.glow.replace("0.4", "1") }} />
-
                 <div className="relative flex flex-col md:flex-row md:items-center gap-6">
-                  <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-lg font-serif font-bold bg-gradient-to-br ${book.color} text-white shadow-lg`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold bg-gradient-to-br ${book.color} text-white`}>
                     {book.id}
                   </div>
-                  <div className="flex-1">
-                    <h2 className={`text-2xl md:text-3xl font-serif italic text-transparent bg-clip-text bg-gradient-to-r ${book.color} mb-2`}>
+                  <div>
+                    <h2 className={`text-2xl md:text-3xl font-serif italic text-transparent bg-clip-text bg-gradient-to-r ${book.color}`}>
                       {book.title}
                     </h2>
-                    <p className="text-white/35 text-xs uppercase tracking-widest mb-3">
+                    <p className="text-white/40 text-xs uppercase tracking-widest mb-2">
                       {book.author}
                     </p>
-                    <p className="text-white/55 leading-relaxed max-w-3xl text-sm">
+                    <p className="text-white/60 text-sm leading-relaxed max-w-3xl">
                       {book.description}
                     </p>
                   </div>
@@ -187,46 +397,17 @@ export default function Books() {
               </div>
             </div>
 
-            {/* PDF Embed */}
-            {book.pdf ? (
-              <div
-                className="relative rounded-2xl overflow-hidden border border-white/8"
-                style={{ boxShadow: `0 0 40px ${book.glow.replace("0.4", "0.12")}` }}
-              >
-                <embed
-                  src={book.pdf}
-                  type="application/pdf"
-                  className="w-full"
-                  style={{ height: "82vh", minHeight: 500 }}
-                />
-              </div>
-            ) : (
-              <div
-                className="relative rounded-2xl border border-white/8 p-12 text-center bg-[#09090f]"
-                style={{ boxShadow: `0 0 40px ${book.glow.replace("0.4", "0.08")}` }}
-              >
-                <p className="text-white/30 text-sm">{book.note}</p>
-              </div>
-            )}
-            {/* Google Drive Archive */}
-<div className="mt-24">
-  <h2 className="text-xl mb-6">Additional PDFs</h2>
-
-  <div className="space-y-2">
-    {driveLinks.map((link, index) => (
-      <div key={index}>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          PDF {index + 1}
-        </a>
-      </div>
-    ))}
-  </div>
-</div>
+            <div
+              className="relative rounded-2xl overflow-hidden border border-white/10"
+              style={{ boxShadow: `0 0 40px ${book.glow}` }}
+            >
+              <embed
+                src={book.pdf}
+                type="application/pdf"
+                className="w-full"
+                style={{ height: "82vh", minHeight: 500 }}
+              />
+            </div>
           </motion.div>
         ))}
       </div>
