@@ -87,12 +87,12 @@ function ChapterCard({ chapter }: { chapter: typeof chapters[0] }) {
         </div>
 
         <div className="px-5 pb-4 flex flex-wrap gap-2">
-          <a href={`https://${chapter.id}corinda.netlify.app`} target="_blank" rel="noopener noreferrer"
+          <a href={`https://corinda${chapter.id}.netlify.app`} target="_blank" rel="noopener noreferrer"
             className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium uppercase tracking-wider bg-gradient-to-br ${chapter.color} text-white opacity-85 hover:opacity-100 transition-opacity`}
             onClick={e => e.stopPropagation()}>
             <RiExternalLinkLine className="shrink-0" /> View Site
           </a>
-          <a href={`https://${chapter.id}-corinda.netlify.app`} target="_blank" rel="noopener noreferrer"
+          <a href={`https://${chapter.id}corinda.netlify.app`} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium uppercase tracking-wider bg-white/5 border border-white/10 text-white/55 hover:text-white hover:bg-white/10 transition-all"
             onClick={e => e.stopPropagation()}>
             <RiAlertLine className="shrink-0 text-green-400" /> Emergency
@@ -114,7 +114,7 @@ function ChapterCard({ chapter }: { chapter: typeof chapters[0] }) {
               className="overflow-hidden border-t border-white/8"
             >
               <iframe src={`https://${chapter.id}corinda.netlify.app`}
-                title={`Chapter ${chapter.id} — ${chapter.title}`}
+                title={`Chapter ${chapter.id}: ${chapter.title}`}
                 className="w-full h-70" style={{ height: 280 }}
                 loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" />
             </motion.div>
