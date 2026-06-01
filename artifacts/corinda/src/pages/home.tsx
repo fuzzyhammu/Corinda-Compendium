@@ -2,6 +2,9 @@ import { Link } from "wouter";
 import { motion, type Variants } from "framer-motion";
 import { books } from "@/lib/data";
 import { RiBookOpenLine, RiArrowRightLine, RiRouteLine } from "react-icons/ri";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { chapters, books } from "@/lib/data";
+import { RiExternalLinkLine, RiAlertLine, RiEyeLine, RiEyeOffLine, RiBookOpenLine, RiArrowRightLine } from "react-icons/ri";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
