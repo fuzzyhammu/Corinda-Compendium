@@ -208,13 +208,7 @@ export default function Books() {
                 <p className="text-white/30 text-sm">{book.note}</p>
               </div>
             )}
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-{/* Google Drive Archive */}
+            {/* Google Drive Archive */}
 <div className="mt-24">
   <h2 className="text-xl mb-6">Additional PDFs</h2>
 
@@ -233,3 +227,9 @@ export default function Books() {
     ))}
   </div>
 </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
