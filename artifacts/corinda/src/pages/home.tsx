@@ -12,6 +12,8 @@ const fadeUp: Variants = {
   }),
 };
 
+const volumeLabel = `${books.length} ${books.length === 1 ? "volume" : "volumes"}`;
+
 function BookCard({ book, index }: { book: typeof books[0]; index: number }) {
   return (
     <motion.div
@@ -75,7 +77,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
-            <span className="text-white/15 text-xs tracking-widest uppercase">{books.length} volumes</span>
+            <span className="text-white/15 text-xs tracking-widest uppercase">{volumeLabel}</span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
           </div>
         </motion.div>
