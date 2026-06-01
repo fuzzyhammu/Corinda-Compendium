@@ -14,21 +14,7 @@ export const chapters = [
   { id: 13, title: "Publicity Stunts", description: "Large-scale public demonstrations designed to attract press coverage and establish the performer as a genuine psychic phenomenon.", color: "from-red-500 to-rose-700", shadow: "shadow-red-500/50", border: "border-red-500/30" },
 ];
 
-export type Book = {
-  id: string;
-  slug: string;
-  title: string;
-  author: string;
-  tag: string;
-  description: string;
-  pdf: string;
-  color: string;
-  glow: string;
-  tagColor: string;
-  hasChapters: boolean;
-};
-
-export const books: Book[] = [
+export const books = [
   {
     id: "corinda",
     slug: "corinda",
