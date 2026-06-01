@@ -59,7 +59,7 @@ export const books = [
     slug: "ekman",
     title: "Telling Lies",
     author: "Paul Ekman",
-    tag: "Deception Science",
+    tag: "Illusions Science",
     description: "The world's foremost authority on micro-expressions reveals the science of deceit — from clinical patients to presidential hearings.",
     pdf: "/pdfs/ekman.pdf",
     color: "from-rose-400 to-red-600",

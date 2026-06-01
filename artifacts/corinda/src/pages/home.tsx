@@ -113,7 +113,7 @@ function ChapterCard({ chapter }: { chapter: typeof chapters[0] }) {
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="overflow-hidden border-t border-white/8"
             >
-              <iframe src={`https://${chapter.id}corinda.netlify.app`}
+              <iframe src={`https://corinda${chapter.id}.netlify.app`}
                 title={`Chapter ${chapter.id}: ${chapter.title}`}
                 className="w-full h-70" style={{ height: 280 }}
                 loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" />
@@ -133,10 +133,10 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: -24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }}>
           <p className="text-[10px] uppercase tracking-[0.5em] text-white/25 mb-5">Curated Archive</p>
           <h1 className="text-6xl md:text-9xl font-serif italic tracking-tighter mb-5 text-transparent bg-clip-text bg-gradient-to-br from-white via-white/80 to-white/20 drop-shadow-[0_0_60px_rgba(255,255,255,0.08)]">
-            The Compendium
+            The Complete Directory
           </h1>
           <p className="text-sm md:text-base text-white/35 tracking-[0.2em] uppercase max-w-xl mx-auto leading-relaxed">
-            Mentalism · Influence · Deception · Rapport · Body Language
+            Mentalism · Influence · Illusions · Rapport · Body Language
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />

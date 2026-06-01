@@ -30,7 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <nav className="relative z-50 border-b border-white/5 bg-black/30 backdrop-blur-xl sticky top-0">
         <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
           <Link href="/" className="font-serif italic text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-300 to-cyan-400 hover:opacity-80 transition-opacity">
-            The Compendium
+            The Complete Directory
           </Link>
           <div className="flex items-center gap-1 md:gap-2">
             <NavLink href="/" icon={<RiHomeLine />} label="Overview" active={location === "/"} />
@@ -49,9 +49,9 @@ export function Layout({ children }: { children: ReactNode }) {
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/5 bg-[#030305] py-6 text-center text-xs text-white/20">
         <div className="container mx-auto flex items-center justify-center gap-3">
-          <span className="tracking-widest uppercase">The Compendium</span>
+          <span className="tracking-widest uppercase">The Complete Directory</span>
           <span className="text-white/10">·</span>
-          <span className="text-white/15">Mentalism · Influence · Deception</span>
+          <span className="text-white/15">Mentalism · Influence · Illusions</span>
           <span className="text-white/10">·</span>
           <Link href="/vision" className="opacity-10 hover:opacity-60 transition-all duration-500 cursor-pointer">
             *
