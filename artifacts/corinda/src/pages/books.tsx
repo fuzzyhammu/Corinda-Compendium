@@ -1,5 +1,37 @@
 import { motion } from "framer-motion";
-
+const driveLinks = [
+  "https://drive.google.com/file/d/13VMpCcqzLiERziklNJdbKZfngmwO8pe2/view",
+  "https://drive.google.com/file/d/16-M4iMzG3wpTM5YHOhN6ij_7wO0EKd8h/view",
+  "https://drive.google.com/file/d/1662TrO57SuR3H5KA_8kPSbDkJGVMJxNg/view",
+  "https://drive.google.com/file/d/16_V6aUthrv9zuHhFcso5iW1zSm_aEVwd/view",
+  "https://drive.google.com/file/d/19I9M4fjmmXpWZ2NQwQMESmwGb2iA1SvG/view",
+  "https://drive.google.com/file/d/1B8wQYDgR7Cr8KNU-HJE14ymY5EHz2Xe1/view",
+  "https://drive.google.com/file/d/1BmVeUuMLCYy0cBtaNSkGZQYDRBt6_fWj/view",
+  "https://drive.google.com/file/d/1GolcvPMOZlV5ThRZ6IepPcrqiMZjTMYN/view",
+  "https://drive.google.com/file/d/1OlUWs0nHtOAfcNMwhcW2c4jgEtlIkXVS/view",
+  "https://drive.google.com/file/d/1Pflqr0mSFit2-DBzYb2Qu3T7GfrmDzTz/view",
+  "https://drive.google.com/file/d/1Qh-tnEarL5xqnn0-5--1WvNxiNvMMX5J/view",
+  "https://drive.google.com/file/d/1VPtDApBs3AXG0SraNdouHzDUCwKytBeN/view",
+  "https://drive.google.com/file/d/1WD4rgrtR1-x-jKZ31ZXbzv1Vewk7rvKI/view",
+  "https://drive.google.com/file/d/1_vq4ZXO3mBjn63T9n-15TKpAdn0-Qlgz/view",
+  "https://drive.google.com/file/d/1aOm38QVlOZHVtNWYGRLO0GtYeL8Dl0JS/view",
+  "https://drive.google.com/file/d/1cZ3YohPWnUQd_6GuWsOwCl6TcNExwz-v/view",
+  "https://drive.google.com/file/d/1dMoseEcEABR8-f5xlFq0KrSR_Dp8JAOM/view",
+  "https://drive.google.com/file/d/1f1yIpyUJHadjReNR-cFXWSpuZ99oFzpQ/view",
+  "https://drive.google.com/file/d/1fdPmS1-LFvOhCpEkc46uTMCc0Ten_WV9/view",
+  "https://drive.google.com/file/d/1ixvHcQJdMKu6dpv6h-3Zz-qLrd72f0mN/view",
+  "https://drive.google.com/file/d/1j9Vp1MhI2G5CqRIK1knIt3Qe0FwL9ioj/view",
+  "https://drive.google.com/file/d/1kdaycJrpDkfi3vddqQCoYVUjS7raSZq1/view",
+  "https://drive.google.com/file/d/1l_eaxZalMImrpKVVvWj2VwO9ZIaKaUUT/view",
+  "https://drive.google.com/file/d/1lxac0if2AFCtUdK8Kbe_b9aR0W33VzHm/view",
+  "https://drive.google.com/file/d/1lxe-wH_zxWA4Fw9xXU7cT8mU4CIIRJSM/view",
+  "https://drive.google.com/file/d/1orX_4KlTy_HFgrdz5DyHYaq51qfag69O/view",
+  "https://drive.google.com/file/d/1outED5qsvgNJoGBXnNO-ixbU37-IFig4/view",
+  "https://drive.google.com/file/d/1sa9i0U3fQOmwQG8-6G4QKnleTqm6l-s9/view",
+  "https://drive.google.com/file/d/1tu0npBzuoc2Br6E6YmK_RYHh1PrtLmqL/view",
+  "https://drive.google.com/file/d/1ulLj4atH5ATpbBj_EjqJuueSHX9cURuQ/view",
+  "https://drive.google.com/file/d/1yp72GlTzU46n_o_wfn-uFp5EyKxCoCu2/view",
+];
 const books = [
   {
     id: 1,
@@ -182,3 +214,22 @@ export default function Books() {
     </div>
   );
 }
+{/* Google Drive Archive */}
+<div className="mt-24">
+  <h2 className="text-xl mb-6">Additional PDFs</h2>
+
+  <div className="space-y-2">
+    {driveLinks.map((link, index) => (
+      <div key={index}>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          PDF {index + 1}
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
